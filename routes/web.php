@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 /** Routes for category */
 Route::get('/package', [PackageController::class, 'index']);
-//Route::get('/category/create', [CategoryController::class, 'create']);
-//Route::get('/category/{id}', [CategoryController::class, 'find']);
-//Route::post('/category', [CategoryController::class, 'store']);
+
+Route::get('/create',[PackageController::class,'createPackage']);
+
+Route::post('/add', [PackageController::class,'addPackage']);

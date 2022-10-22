@@ -10,8 +10,17 @@ class PackageController extends Controller
 
     public function index()
     {
-        $packa = Package::all();
+        $packageList = Package::all();
 
-        return view('package.index', compact('packa'));
+        return view('package.index', compact('packageList'));
+    }
+
+    public  function  createPackage()
+    {
+        return view('package.create');
+    }
+    public  function addPackage(Request $request)
+    {
+        dd($request->all());
     }
 }

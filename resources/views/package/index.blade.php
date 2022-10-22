@@ -33,7 +33,7 @@
         </div>
 
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-            @foreach($packa as $item)
+            @foreach($packageList as $item)
                 <h1>id: {{ $item->id }}</h1>
                 <h2>name: {{ $item->name }}</h2>
                 <h2>price: {{ $item->price }}</h2>
