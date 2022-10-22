@@ -33,11 +33,11 @@
         </div>
 
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-            @foreach($categories as $category)
-                <h1>id: {{ $package->id }}</h1>
-                <h2>name: {{ $package->name }}</h2>
-                <h2>name: {{ $package->price }}</h2>
-                <h2>status: {{ $package->status == 1 ? 1 : 0 }}</h2>
+            @foreach($packa as $item)
+                <h1>id: {{ $item->id }}</h1>
+                <h2>name: {{ $item->name }}</h2>
+                <h2>price: {{ $item->price }}</h2>
+                <h2>status: {{ $item->status == 1 ? 1 : 0 }}</h2>
                 <hr>
             @endforeach
         </div>
