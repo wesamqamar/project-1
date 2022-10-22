@@ -33,8 +33,22 @@ class PackageController extends Controller
 
     public function editPackage($id)
     {
+
+        $test = Package::query()->where('id', $id)->first();
+
+        return view('package.edit', compact('test'));
+    }
+
+    public function updatePackage($id, Request $request)
+    {
         $package = Package::query()->where('id', $id)->first();
 
-        dd($package);
+        $package->update([
+            'name' => $request->package_name,
+            'price' => $request->package_price,
+            'status' => $request->package_status == 'on' ? 1 : 0
+        ]);
+
+        return redirect('package');
     }
 }

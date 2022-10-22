@@ -10,6 +10,4 @@ class Package extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'price', 'status'];
-
-    protected $casts = ['status' => 'bool'];
 }

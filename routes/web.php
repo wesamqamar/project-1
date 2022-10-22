@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::get('/package', [PackageController::class, 'index']);
 
 Route::get('/create',[PackageController::class,'createPackage']);
+Route::post('/add', [PackageController::class,'addPackage']);
 
 Route::get('/edit_package/{id}',[PackageController::class,'editPackage']);
+Route::post('/update_package/{id}',[PackageController::class,'updatePackage']);
 
-Route::post('/add', [PackageController::class,'addPackage']);

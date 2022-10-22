@@ -43,6 +43,7 @@
                 <h2>price: {{ $item->price }}</h2>
                 <h2>status: {{ $item->status == 1 ? 1 : 0 }}</h2>
                 <hr>
+                <a href="edit_package/{{$item->id}}">Edit Package</a>
             @endforeach
         </div>
 
