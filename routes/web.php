@@ -23,4 +23,6 @@ Route::get('/package', [PackageController::class, 'index']);
 
 Route::get('/create',[PackageController::class,'createPackage']);
 
+Route::get('/edit_package/{id}',[PackageController::class,'editPackage']);
+
 Route::post('/add', [PackageController::class,'addPackage']);
