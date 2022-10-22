@@ -12,6 +12,6 @@ class PackageController extends Controller
     {
         $packages = Package::all();
 
-        return view('package.index', compact('categories'));
+        return view('package.index', compact('packages'));
     }
 }
