@@ -29,11 +29,13 @@
         <div class="form-group">
             <label for="exampleInputEmail1">اسم الباقة </label>
             <input type="text" class="form-control" name="package_name" placeholder="Enter name">
+            <span>{{ $errors->first('package_name') }}</span>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">سعر الباقة</label>
             <input type="text" class="form-control" name="package_price" placeholder="Enter price">
+            <span>{{ $errors->first('package_price') }}</span>
         </div>
 
 

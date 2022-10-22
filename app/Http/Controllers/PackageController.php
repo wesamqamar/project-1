@@ -22,6 +22,15 @@ class PackageController extends Controller
 
     public function addPackage(Request $request)
     {
+        $request->validate([
+            'package_name' => 'required',
+            'package_price' => 'required|numeric',
+        ], [
+            'package_name.required' => 'يجب ادخال حقل الاسم',
+            'package_price.required' => 'يجب ادخال حقل السعر',
+            'package_price.numeric' => 'يجب ادخال قيمة السعر ليست صحيحة',
+        ]);
+
         Package::query()->create([
             'name' => $request->package_name,
             'price' => $request->package_price,
@@ -41,6 +50,10 @@ class PackageController extends Controller
 
     public function updatePackage($id, Request $request)
     {
+        $request->validate([
+            'package_name' => 'required'
+        ]);
+
         $package = Package::query()->where('id', $id)->first();
 
         $package->update([
@@ -50,5 +63,14 @@ class PackageController extends Controller
         ]);
 
         return redirect('package');
+    }
+
+    public function deletePackage($id)
+    {
+        $package = Package::query()->where('id', $id)->first();
+
+        $package->delete();
+
+        return redirect('/package');
     }
 }

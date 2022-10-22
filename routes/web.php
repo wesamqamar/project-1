@@ -27,3 +27,5 @@ Route::post('/add', [PackageController::class,'addPackage']);
 Route::get('/edit_package/{id}',[PackageController::class,'editPackage']);
 Route::post('/update_package/{id}',[PackageController::class,'updatePackage']);
 
+Route::post('/delete_package/{id}',[PackageController::class,'deletePackage']);
+

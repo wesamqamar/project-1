@@ -44,6 +44,10 @@
                 <h2>status: {{ $item->status == 1 ? 1 : 0 }}</h2>
                 <hr>
                 <a href="edit_package/{{$item->id}}">Edit Package</a>
+                <form action="delete_package/{{$item->id}}" method="POST">
+                    @csrf
+                    <button type="submit">Delete Package</button>
+                </form>
             @endforeach
         </div>
 
